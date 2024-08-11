@@ -1,0 +1,15 @@
+[submodule "lib/cimgui"]
+	path = lib/cimgui
+	url = git@github.com:cimgui/cimgui.git
+[submodule "lib/glfw"]
+	path = lib/glfw
+	url = git@github.com:glfw/glfw.git
+[submodule "lib/libromfs"]
+	path = lib/libromfs
+	url = git@github.com:WerWolv/libromfs.git
+[submodule "lib/cglm"]
+	path = lib/cglm
+	url = git@github.com:recp/cglm.git
+[submodule "lib/glew"]
+	path = lib/glew
+	url = git@github.com:Perlmint/glew-cmake.git
