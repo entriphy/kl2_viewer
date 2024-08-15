@@ -2,9 +2,11 @@ cmake_minimum_required(VERSION 3.5.0)
 project(kl2_renderer VERSION 0.1.0 LANGUAGES C CXX)
 
 set(COMMON_SRC src/vu0.c src/gs.c src/gms.c src/romfs.cpp)
+set(BACKEND_SRC src/backend/opengl_common.c src/backend/opengl_egl.c src/backend/opengl_glfw.c)
 add_executable(kl2_renderer
     src/main.c
     ${COMMON_SRC}
+    ${BACKEND_SRC}
 
     src/take/camera.c
     src/take/mimesys.c

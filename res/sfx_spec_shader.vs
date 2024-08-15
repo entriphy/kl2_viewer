@@ -31,7 +31,6 @@ out float v_Alpha;
 // SFX:  A = src, B = fb, C = 0x7F,  D = fb
 // Spec: A = src, B = 0,  C = alpha, D = fb
 
-// @@@ ccc: https://discord.com/channels/1171531804851835011/1171532305244889239/1270932547450175511
 void main() {
     vec4 Pos = MimeWeight > 0.0 ? mix(MimePosition0, MimePosition1, MimeWeight) : Position;
     vec4 Norm = MimeWeight > 0.0 ? mix(MimeNormal0, MimeNormal1, MimeWeight) : Normal;
@@ -49,12 +48,12 @@ void main() {
         NormalWeights[2] * Spec[Joints[2]] * Norm +
         NormalWeights[3] * Spec[Joints[3]] * Norm;
 
-    Texcoord += 1.0 / 128.0;
+    Texcoord += 1.0;
     Texcoord /= 4.0;
     
     gl_Position = Projection * View * Model * Skin * Pos;
     v_Texcoord = vec2(Texcoord.xy);
-    // v_Alpha = 1.0 - min(min(Ambient[0] + Ambient[1] + Ambient[2], 0.8) / 0.8, 254.0 / 255.0);
+    v_Alpha = min(Ambient[0] + Ambient[1] + Ambient[2], 0.8) / 0.8;
     // v_Alpha = 0.5;
     // v_Alpha = 104.0 / 128.0;
 }
